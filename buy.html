@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <title>Hello</title>
+</head>
+<body>
+    <div class="idx">
+        <div class="box2" id="idx">
+            <h2>Product Details</h2>
+            <img src="/assets/Dell-Laptop-PNG-Image.png" alt="laptop" height="350px">
+            <p style="font-weight: bold;">Dell Laptop </p>
+            <p style="font-weight: bold;">₱52000.00</p>
+            <p>Shipping To: Cagayan De Oro</p>
+            <p>Shipping Fee: 50</p>
+            <div class="quantity" style="align-items: center;">
+                <p>Quantity: </p>
+                <button class="quantity-button" id="subtractButton" onclick="Subtract()">-</button>
+                <p id="valueQuantity">1</p>
+                <button class="quantity-button"  id="addButton" onclick="Add()">+</button>
+            </div>
+        </div>
+
+        <div class="checkout">
+            <h2 id="thankyou">Ready to Checkout?</h2>
+            <div class="checkout-inside">
+                <img src="/assets/Dell-Laptop-PNG-Image.png" alt="laptop" id="image" class="imagexx" height="0" width="0">
+                <p style="font-weight: bold;">Dell Laptop </p>
+                <h2 id="subtotal">Subtotal:  0</h2>
+                <h2 id="quantity">Quantity: 0</h2>
+                <h2 id="shippingFee">Shipping Fee: 0</h2>
+                <h2 id="total">Total: 0</h2>
+                <button class="button" id="checkoutBtn" onclick="Checkout()">Checkout</button>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
