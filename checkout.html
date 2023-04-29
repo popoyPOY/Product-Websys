@@ -16,8 +16,8 @@
         <div class="checkout">
             <h2>Your Order</h2>
             <div class="checkout-inside">
-                <img src="/assets/Dell G5 15 5590 Laptop - ₱52000.00.jpg" alt="">
-                <h2 id="subtotalx">Subtotal:  0</h2>
+                <img src="/assets/Dell-Laptop-PNG-Image.png" alt="" style="width: 450px">
+                <h2 id="subtotalx">Subtotal: 0</h2>
                 <h2 id="quantityx">Quantity: 0</h2>
                 <h2 id="shippingFeex">Shipping Fee: 0</h2>
                 <h2 id="totalx">Total: 0</h2>
@@ -25,6 +25,30 @@
         </div>
     </div>
 
-    <script src="app.js"></script>
+    <script>
+        const queryString = window.location.search
+        const urlParams = new URLSearchParams(queryString)
+
+        let subtotalx = document.getElementById("subtotalx")
+        let quantityx = document.getElementById("quantityx")
+        let shippingFeex = document.getElementById("shippingFeex")
+        let totalx = document.getElementById("totalx")
+
+        window.addEventListener("DOMContentLoaded", () => {
+            let quantity = urlParams.get("quantity")
+            let subtotal = urlParams.get("subtotal")
+            let shippingFee = urlParams.get("shippingFee")
+            let total = urlParams.get("total")
+            
+            console.log(total)
+
+            subtotalx.innerText = "Subtotal: " + subtotal
+            quantityx.innerText = "Quantity: " + quantity
+            shippingFeex.innerText = "Shipping Fee: " + shippingFee
+            totalx.innerText = "Total: " + total
+
+
+        })
+    </script>
 </body>
 </html>

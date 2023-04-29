@@ -43,7 +43,12 @@ function Add() {
     
         shipping.innerText = "Shipping Fee: " + shippingFee
         total.innerText = "Total: " + productPrice * quantity 
-    
+
+        checkout.Product.price = Product.Laptop.price
+        checkout.Product.quantity = quantity
+        checkout.Product.shippingFee = shippingFee
+        checkout.Product.total = productPrice * quantity
+
         if (quantity == stock) {
             alert("We can't add anymore")
             Addbutton.disabled = true
@@ -64,6 +69,11 @@ function Subtract() {
     shipping.innerText = "Shipping Fee: " + shippingFee
     total.innerText = "Total: " + productPrice * quantity 
 
+
+    checkout.Product.price = Product.Laptop.price
+    checkout.Product.quantity = quantity
+    checkout.Product.shippingFee = shippingFee
+    checkout.Product.total = productPrice * quantity
 
     if (quantity == 0) {
         subtractButton.disabled = true
@@ -92,12 +102,8 @@ function Checkout() {
         alert("You can't checkout without a product")
     }
     else {
-    
-    checkout.Product.price = subTotal.innerText
-    checkout.Product.quantity = itemQuantity.innerText
-    checkout.Product.shippingFee = shippingFee
-    checkout.Product.total = total.innerText
 
+    /*
     document.getElementById("idx").remove()
 
     image.style.height = "450px"
@@ -106,7 +112,10 @@ function Checkout() {
 
     checkoutBUtton.remove()
     h2.innerText = "Thank you"
-    }
+    */
+    
 
+    location.href = '/checkout.html' +"?subtotal=" + checkout.Product.price + "&quantity=" + checkout.Product.quantity + "&shippingFee=" + checkout.Product.shippingFee + "&total=" + checkout.Product.total 
+    }
 
 }
